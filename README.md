@@ -33,3 +33,11 @@ Different hardware representations of the same Boolean function can result in su
 This project therefore investigates the same cryptographic functionality across multiple hardware architectures rather than evaluating a single RTL implementation.
 
 The study combines architecture exploration with simulation, formal verification, and synthesis-based PPA analysis to establish a reproducible methodology for comparing cryptographic RTL implementations.
+
+| Cipher  | Function      | Width | LUT | AIG/Boolean | ANF |
+| ------- | ------------- | ----: | --: | ----------: | --: |
+| AES     | S-box         | 8 → 8 |   ✓ |          ✓ |   ✓ |
+| AES     | Inverse S-box | 8 → 8 |   ✓ |          ✓ |   ✓ |
+| PRESENT | S-box         | 4 → 4 |   ✓ |          ✓ |   ✓ |
+| PRESENT | Inverse S-box | 4 → 4 |   ✓ |          ✓ |   ✓ |
+| Ascon   | S-box         | 5 → 5 |   ✓ |          ✓ |   ✓ |
