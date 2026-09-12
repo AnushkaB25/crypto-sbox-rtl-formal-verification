@@ -85,12 +85,12 @@ The resulting design space is shown below.
 
 | Functional Design     | LUT-Based | AIG/Boolean-Based | ANF-Based |
 | --------------------- | :-------: | :---------------: | :-------: |
-| AES S-box             |     ✓     |         ✓         |     ✓     |
-| AES Inverse S-box     |     ✓     |         ✓         |     ✓     |
 | PRESENT S-box         |     ✓     |         ✓         |     ✓     |
 | PRESENT Inverse S-box |     ✓     |         ✓         |     ✓     |
 | Ascon S-box           |     ✓     |         ✓         |     ✓     |
-| **Total**             |   **5**   |       **5**       |   **5**   |
+| AES S-box             |     ✓     |         ✓         |     ✓     |
+| AES Inverse S-box     |     ✓     |         ✓         |     ✓     |
+| **Total**             |   **5**   |       **5**        |   **5**   |
 
 ---
 
