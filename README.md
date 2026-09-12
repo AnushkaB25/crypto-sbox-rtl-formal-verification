@@ -36,8 +36,8 @@ The study combines architecture exploration with simulation, formal verification
 
 | Cipher  | Function      | Width | LUT | AIG/Boolean | ANF |
 | ------- | ------------- | ----: | --: | ----------: | --: |
-| AES     | S-box         | 8 → 8 |   ✓ |          ✓ |   ✓ |
-| AES     | Inverse S-box | 8 → 8 |   ✓ |          ✓ |   ✓ |
 | PRESENT | S-box         | 4 → 4 |   ✓ |          ✓ |   ✓ |
 | PRESENT | Inverse S-box | 4 → 4 |   ✓ |          ✓ |   ✓ |
 | Ascon   | S-box         | 5 → 5 |   ✓ |          ✓ |   ✓ |
+| AES     | S-box         | 8 → 8 |   ✓ |          ✓ |   ✓ |
+| AES     | Inverse S-box | 8 → 8 |   ✓ |          ✓ |   ✓ |
