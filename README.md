@@ -23,3 +23,13 @@ The verification flow combines:
 * RTL synthesis and PPA analysis using Synopsys Design Compiler
 
 The objective is to evaluate how different Boolean representations of cryptographic S-boxes affect implementation characteristics while maintaining functional correctness and cryptographic properties.
+
+## Motivation
+
+Cryptographic substitution functions are fundamental nonlinear components in modern symmetric-key cryptographic hardware. Their implementation can significantly influence area, timing, power consumption, verification complexity, and resistance to implementation-related faults.
+
+Different hardware representations of the same Boolean function can result in substantially different synthesized structures. A truth-table/LUT implementation, an AND-Inverter Graph (AIG) or Boolean implementation, and an Algebraic Normal Form (ANF) implementation expose different optimization opportunities to synthesis tools.
+
+This project therefore investigates the same cryptographic functionality across multiple hardware architectures rather than evaluating a single RTL implementation.
+
+The study combines architecture exploration with simulation, formal verification, and synthesis-based PPA analysis to establish a reproducible methodology for comparing cryptographic RTL implementations.
