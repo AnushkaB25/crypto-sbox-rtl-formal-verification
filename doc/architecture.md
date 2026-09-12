@@ -63,11 +63,11 @@ The architecture study considers the following functional designs:
 
 | ID | Cipher  | Function      | Input Width | Output Width | Inverse Available |
 | -- | ------- | ------------- | ----------: | -----------: | ----------------- |
-| D1 | AES     | S-box         |           8 |            8 | Yes               |
-| D2 | AES     | Inverse S-box |           8 |            8 | Yes               |
-| D3 | PRESENT | S-box         |           4 |            4 | Yes               |
-| D4 | PRESENT | Inverse S-box |           4 |            4 | Yes               |
-| D5 | Ascon   | S-box         |           5 |            5 | No                |
+| D1 | PRESENT | S-box         |           4 |            4 | Yes               |
+| D2 | PRESENT | Inverse S-box |           4 |            4 | Yes               |
+| D3 | Ascon   | S-box         |           5 |            5 | No                |
+| D4 | AES     | S-box         |           8 |            8 | Yes               |
+| D5 | AES     | Inverse S-box |           8 |            8 | Yes               |
 
 Each functional design was implemented using the three selected hardware representations.
 
