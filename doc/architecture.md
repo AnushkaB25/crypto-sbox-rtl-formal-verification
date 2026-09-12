@@ -442,8 +442,8 @@ The resulting ANF RTL implementations are then verified against the correspondin
 ## 6.2 Conceptual Architecture
 
 ```text
-Input Variables
-      |
+          Input Variables
+               |
       +------------------+
       |                  |
       v                  v
