@@ -364,33 +364,80 @@ The synthesized implementation characteristics depend on the Boolean network str
 
 # 6. Architecture 3 — ANF-Based Implementation
 
-## 6.1 Concept
+## 6.1 ANF-Based Implementation
 
-The third implementation uses the **Algebraic Normal Form (ANF)** representation of the cryptographic Boolean function.
+**Algebraic Normal Form (ANF)** is a representation of a Boolean function using XOR and AND operations.
 
-ANF expresses Boolean functions using XOR and AND operations.
+In this project, each output bit of the cryptographic S-box is expressed as a Boolean equation involving the input bits.
 
-A Boolean function can be represented in the form:
+For an S-box with input:
 
 $$
-f(x_0,x_1,\ldots,x_{n-1})
-=
-c_0
-\oplus
-\bigoplus_i c_i x_i
-\oplus
-\bigoplus_{i<j} c_{ij}x_ix_j
-\oplus
-\cdots
+X=(X_0,X_1,\ldots,X_{n-1})
 $$
 
-where:
+and output:
 
-* \(c_i\in\{0,1\}\)
-* \(\oplus\) represents XOR
-* multiplication represents Boolean AND
+$$
+Y=(Y_0,Y_1,\ldots,Y_{m-1})
+$$
 
----
+each output bit is represented independently:
+
+$$
+Y_0=f_0(X)
+$$
+
+$$
+Y_1=f_1(X)
+$$
+
+$$
+\ldots
+$$
+
+$$
+Y_{m-1}=f_{m-1}(X)
+$$
+
+where each \(f_i\) is constructed using XOR and AND operations.
+
+For example, an ANF Boolean equation may have the form:
+
+```text
+Y0 = X0 XOR X1 XOR (X2 AND X3)
+```
+
+which can be directly implemented in SystemVerilog as:
+
+```systemverilog
+assign Y0 = X0 ^ X1 ^ (X2 & X3);
+```
+
+Therefore, the ANF implementation converts the S-box mapping into a combinational network of XOR and AND operations.
+
+The conceptual hardware structure is:
+
+```text
+                  Input Bits
+                X3 X2 X1 X0
+                     |
+          +----------+----------+
+          |                     |
+          v                     v
+      AND Operations       AND Operations
+          |                     |
+          +----------+----------+
+                     |
+                XOR Operations
+                     |
+                     v
+                  Output Bits
+```
+
+The same procedure is applied independently to each output bit of the AES, PRESENT, and Ascon substitution functions.
+
+The resulting ANF RTL implementations are then verified against the corresponding reference functions and compared with the LUT-based and AIG/Boolean-based implementations.
 
 ## 6.2 Conceptual Architecture
 
